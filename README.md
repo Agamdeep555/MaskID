@@ -1,201 +1,135 @@
-MaskID: Face Mask Detection System using CNN
+# MaskID: Face Mask Detection System using CNN
+
+This project is a deep learning model built with TensorFlow and Keras to detect whether a person in an image is wearing a face mask. The model is a Convolutional Neural Network (CNN) trained on a public dataset from Kaggle, achieving an accuracy of approximately 92.2% on the test set.
+
+## 📋 Table of Contents
+* [Project Overview](#project-overview)
+* [Features](#features)
+* [Dataset](#dataset)
+* [Model Architecture](#model-architecture)
+* [Technologies Used](#technologies-used)
+* [Setup and Installation](#setup-and-installation)
+* [How to Run](#how-to-run)
+* [Results](#results)
+* [Predictive System](#predictive-system)
+
+## 🚀 Project Overview
+
+"MaskID" is designed to classify images into two categories: 'with_mask' or 'without_mask'. This is particularly relevant for public health and safety monitoring. The system uses a CNN, a class of deep neural networks well-suited for image analysis. The entire pipeline, from data acquisition and preprocessing to model training and prediction, is contained within the `main.ipynb` notebook.
+
+## ✨ Features
 
-🌟 Overview
+* **CNN Model:** Utilizes a sequential CNN model for high-accuracy image classification.
+* **Data Augmentation:** Implements image resizing and scaling for uniform data preprocessing.
+* **Training & Evaluation:** Includes complete code for training, validation, and testing the model.
+* **High Accuracy:** Achieves **92.19%** accuracy on the unseen test dataset.
+* **Predictive System:** A simple, interactive prediction script is included to test the model on new images.
 
-MaskID is a deep learning project utilizing a Convolutional Neural Network (CNN) to accurately detect whether individuals in an image are wearing a face mask or not. This system is developed using TensorFlow/Keras and is trained on a public dataset, making it ideal for applications like real-time monitoring of public health compliance in enclosed spaces or public transport.
+## 📊 Dataset
 
-The project achieves a test accuracy of approximately 92%.
+The model is trained on the **Face Mask Dataset** available on Kaggle, which was contributed by Omkar Gurav.
+* **Dataset Link:** [https://www.kaggle.com/datasets/omkargurav/face-mask-dataset](https://www.kaggle.com/datasets/omkargurav/face-mask-dataset)
+* The dataset contains 7,553 images, split into two classes:
+    * `with_mask`: 3,725 images (Labelled as **1**)
+    * `without_mask`: 3,828 images (Labelled as **0**)
 
-🛠️ Technology Stack
+All images are preprocessed by resizing them to `128x128` pixels and converting them to RGB.
 
-Language: Python
+## 🧠 Model Architecture
 
-Core Libraries: TensorFlow 2.x, Keras
+The model is a `keras.Sequential` CNN with the following layers:
 
-Data Processing: NumPy, Pandas, OpenCV (cv2), Pillow (PIL)
+1.  **Conv2D:** 32 filters, (3,3) kernel, 'relu' activation, input shape (128, 128, 3)
+2.  **MaxPooling2D:** (2,2) pool size
+3.  **Conv2D:** 64 filters, (3,3) kernel, 'relu' activation
+4.  **MaxPooling2D:** (2,2) pool size
+5.  **Flatten**
+6.  **Dense:** 128 units, 'relu' activation
+7.  **Dropout:** 0.5
+8.  **Dense:** 64 units, 'relu' activation
+9.  **Dropout:** 0.5
+10. **Output Layer (Dense):** 2 units, 'sigmoid' activation
 
-Data Source: Face Mask Dataset (Kaggle)
+The model is compiled using:
+* **Optimizer:** `adam`
+* **Loss Function:** `sparse_categorical_crossentropy`
+* **Metrics:** `acc`
 
-📁 Project Workflow
+## 🛠️ Technologies Used
 
-The solution is implemented entirely within the main.ipynb Jupyter Notebook and follows these key steps:
+* Python 3
+* TensorFlow & Keras
+* NumPy
+* OpenCV (`cv2`)
+* Pillow (`PIL`)
+* Scikit-learn (`sklearn`)
+* Matplotlib
+* Kaggle API
 
-1. Data Acquisition and Preparation
+## ⚙️ Setup and Installation
 
-The project uses the Kaggle API to download the face-mask-dataset.zip.
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/your-username/MaskID.git](https://github.com/your-username/MaskID.git)
+    cd MaskID
+    ```
 
-The raw images are organized into two classes: with_mask (3725 images) and without_mask (3828 images).
+2.  **Install dependencies:**
+    ```bash
+    pip install tensorflow numpy matplotlib opencv-python pillow scikit-learn kaggle
+    ```
 
-Labeling: Images with masks are assigned the numerical label 1, and those without a mask are labeled 0.
+3.  **Set up Kaggle API:**
+    * Go to your Kaggle account, click on your profile picture, and select "Account".
+    * Click "Create New API Token" to download `kaggle.json`.
+    * Place the `kaggle.json` file in the root directory of this project.
+    * The notebook will automatically create the `~/.kaggle/` directory and set the correct permissions.
 
-2. Image Preprocessing
+## 🚀 How to Run
 
-All images undergo uniform preprocessing steps to ensure they are suitable for the CNN model:
+1.  Open the `main.ipynb` file in a Jupyter environment (like Jupyter Notebook, JupyterLab, or Google Colab).
+2.  Run the cells sequentially.
+3.  The notebook will:
+    * Install and configure the Kaggle API.
+    * Download and extract the dataset.
+    * Load, preprocess, and label the images.
+    * Split the data into training (80%) and testing (20%) sets.
+    * Build the CNN model.
+    * Train the model for 5 epochs.
+    * Evaluate the model on the test set and display the results.
 
-Resizing: Images are resized to a fixed resolution of 128x128 pixels.
+## 📈 Results
 
-Format Conversion: Images are converted to RGB format.
+The model was trained for 5 epochs with a validation split of 10%.
+* **Final Test Accuracy:** **92.19%**
 
-Array Conversion: The image data and labels are converted into NumPy arrays (X for features, Y for labels).
+### Training History
 
-Scaling/Normalization: Pixel intensity values (0-255) are scaled down to a range of 0 to 1 by dividing by 255.
+The plots below show the model's loss and accuracy over the 5 epochs of training.
 
-3. Model Architecture (Convolutional Neural Network)
+**Model Loss**
+*(The training loss decreases steadily, while the validation loss shows good generalization.)*
 
-A Sequential CNN model is designed for binary image classification:
+**Model Accuracy**
+*(The training and validation accuracy both increase, indicating the model is learning effectively.)*
 
-Layer Type
+## 🔮 Predictive System
 
-Filters/Units
+The notebook includes a final cell to test the trained model on any image.
 
-Kernel/Pool Size
+1.  Run the final cell.
+2.  You will be prompted to enter the path of an image.
+3.  The model will load the image, process it, and print its prediction.
 
-Activation
+**Example 1 (With Mask):**
 
-Purpose
+* **Input:** `/content/test.png`
+* **Output:** `The person in the image is wearing a mask`
 
-Conv2D
+**Example 2 (Without Mask):**
 
-32
+* **Input:** `/content/test.jpg`
+* **Output:** `The person in the image is not wearing a mask`
 
-(3, 3)
-
-ReLU
-
-Initial feature extraction
-
-MaxPooling2D
-
--
-
-(2, 2)
-
--
-
-Spatial downsampling
-
-Conv2D
-
-64
-
-(3, 3)
-
-ReLU
-
-Deeper feature extraction
-
-MaxPooling2D
-
--
-
-(2, 2)
-
--
-
-Spatial downsampling
-
-Flatten
-
--
-
--
-
--
-
-Prepares for dense layers
-
-Dense (Hidden)
-
-128
-
--
-
-ReLU
-
-Learning complex patterns
-
-Dropout
-
--
-
-0.5
-
--
-
-Regularization
-
-Dense (Hidden)
-
-64
-
--
-
-ReLU
-
-Learning complex patterns
-
-Dropout
-
--
-
-0.5
-
--
-
-Regularization
-
-Dense (Output)
-
-2
-
--
-
-Sigmoid
-
-Final prediction (Mask/No Mask)
-
-4. Training and Evaluation
-
-Training Split: Data is split into 80% for training (X_train, Y_train) and 20% for testing (X_test, Y_test).
-
-Compilation: The model uses the adam optimizer and sparse_categorical_crossentropy loss.
-
-Training: The model was trained for 5 epochs.
-
-Performance:
-
-Final Training Accuracy: ~93.08%
-
-Final Test Accuracy: ~92.19%
-
-🚀 Getting Started
-
-Prerequisites
-
-You need Python 3.x and the following libraries:
-
-pip install tensorflow keras numpy pandas opencv-python pillow scikit-learn kaggle
-
-
-Running the Notebook
-
-Kaggle Setup: Obtain your kaggle.json credentials file.
-
-Download Data: The notebook handles the data download automatically if your Kaggle API is set up. Otherwise, manually download the "Face Mask Dataset" and extract it to a directory named data/ containing with_mask and without_mask subdirectories.
-
-Execute Cells: Run all cells in main.ipynb sequentially.
-
-Prediction: The final section of the notebook includes a simple predictive system where you can input the path to any image, and the model will output its classification.
-
-# Example of prediction output:
-# Path of the image to be predicted: /path/to/your/image.jpg
-# [[0.49811754 0.47740024]]
-# 0
-# The person in the image is not wearing a mask
-
-
-📈 Model Performance Visualization
-
-The notebook generates plots to show the training and validation loss and accuracy over the epochs, which helps in identifying potential overfitting and model stability.
-
-Developed as a foundational project in CNN and image classification.
+---
+*This README was generated for the MaskID project.*
