@@ -75,11 +75,6 @@ The model was trained for 5 epochs and achieved the following result on the held
 
 * **Test Accuracy: 92.19%**
 
-The training and validation accuracy/loss plots show that the model learns effectively without significant overfitting in the 5 epochs.
-
-![Model Loss Plot](https://i.imgur.com/G5y1M3g.png)
-![Model Accuracy Plot](https://i.imgur.com/gH2vH1W.png)
-
 ## 🔮 Predictive System
 
 The notebook includes a final cell to test the trained model on any local image.
@@ -88,4 +83,6 @@ The notebook includes a final cell to test the trained model on any local image.
 2.  You will be prompted to enter the path of an image.
 3.  The model will load the image, process it, and print the model's prediction.
 
-**Example 1 (With Mask):**
+## 🏁 Conclusion
+
+Building this project was a valuable exercise in applying deep learning to a tangible, socially relevant problem. While the immediate crisis has subsided, the principles behind this system are still valuable for automated monitoring in various public health and safety contexts.
