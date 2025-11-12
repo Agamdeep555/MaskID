@@ -1,12 +1,9 @@
-# MaskID: Face Mask Detection System using CNN
+# **Title: Face Mask Detection System**
 
-## 🚀 Project Overview & Motivation
 
-This project, **MaskID**, was born from a reflection on the global pandemic that began over four years ago. It struck me how a simple piece of cloth—a face mask—became one of the most critical tools in our collective fight against a global health crisis.
+## **1. Methodology**
+<img src="[https://user-images.githubusercontent.com/7460892/207003643-e03c8964-3f16-4a62-9a2d-b1eec5d8691f.png" width="80%" height="80%"](https://user-images.githubusercontent.com/7460892/207003643-e03c8964-3f16-4a62-9a2d-b1eec5d8691f.png)>
 
-During that time, ensuring public safety in spaces like airports, hospitals, and essential businesses was paramount. Manual monitoring of mask compliance was difficult, inefficient, and often put staff at risk. This sparked the idea for the project: a simple, effective, and automated system to detect face mask usage in real-time.
-
-This repository is my exploration of building such a system. It serves as a technical case study on how Convolutional Neural Networks (CNNs) could be rapidly deployed to solve an immediate, critical, real-world problem. It’s a look back at the kind of technology that was essential for safeguarding public health during one of the most challenging periods of our time.
 
 ## ✨ Features
 
