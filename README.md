@@ -24,10 +24,9 @@ The model is trained on the **Face Mask Dataset** available on Kaggle, which was
 * **Python 3**
 * **TensorFlow** & **Keras**
 * **Scikit-learn**
-* **OpenCV
+* **OpenCV**
 * **NumPy**
 * **Matplotlib** 
-* **Kaggle API**
 
 
 ## 5. Results
