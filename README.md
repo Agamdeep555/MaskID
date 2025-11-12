@@ -4,6 +4,10 @@
 ## **1. Methodology**
 <img src="https://user-images.githubusercontent.com/7460892/207003643-e03c8964-3f16-4a62-9a2d-b1eec5d8691f.png" width="80%" height="80%">
 
+## **2. Description**
+<img src="<img width="350" height="118" alt="Screenshot 2025-11-12 175605" src="https://github.com/user-attachments/assets/b77d0774-45ab-413c-9e2a-5927d626884f" />
+">
+
 
 
 ## ✨ Features
