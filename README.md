@@ -1,15 +1,15 @@
 # **Title: Face Mask Detection System**
 
 
-## **1. Methodology**
+## 1. Methodology
 <img src="https://user-images.githubusercontent.com/7460892/207003643-e03c8964-3f16-4a62-9a2d-b1eec5d8691f.png" width="80%" height="80%">
 
-## **2. Description**
+## 2. Description
 <img width="500" height="200" alt="Screenshot 2025-11-12 175605" src="https://github.com/user-attachments/assets/dffa3ebe-fc38-4a60-b8b9-42052314ac0a" />
 
 
 
-## 📊 Dataset
+## 3. Dataset
 
 The model is trained on the **Face Mask Dataset** available on Kaggle, which was contributed by Omkar Gurav.
 
@@ -19,7 +19,7 @@ The model is trained on the **Face Mask Dataset** available on Kaggle, which was
     * `with_mask`: 3,725 images (Labelled as **1**)
     * `without_mask`: 3,828 images (Labelled as **0**)
 
-## 🛠️ Technologies Used
+## 4. Technologies Used
 
 * **Python 3**
 * **TensorFlow** & **Keras** (for building and training the CNN)
@@ -30,13 +30,13 @@ The model is trained on the **Face Mask Dataset** available on Kaggle, which was
 * **Kaggle API** (for downloading the dataset)
 
 
-## 📈 Results
+## 5. Results
 
 The model was trained for 5 epochs and achieved the following result on the held-out test set:
 
 * **Test Accuracy: 92.19%**
 
 
-## 🏁 Conclusion
+## 6. Conclusion
 
 Building this project was a valuable exercise in applying deep learning to a tangible, socially relevant problem. While the immediate crisis has subsided, the principles behind this system are still valuable for automated monitoring in various public health and safety contexts.
