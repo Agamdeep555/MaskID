@@ -22,12 +22,12 @@ The model is trained on the **Face Mask Dataset** available on Kaggle, which was
 ## 4. Technologies Used
 
 * **Python 3**
-* **TensorFlow** & **Keras** (for building and training the CNN)
-* **Scikit-learn** (for splitting the data)
-* **OpenCV (`cv2`)** & **Pillow (`PIL`)** (for image loading and processing)
-* **NumPy** (for array manipulation)
-* **Matplotlib** (for plotting results)
-* **Kaggle API** (for downloading the dataset)
+* **TensorFlow** & **Keras**
+* **Scikit-learn**
+* **OpenCV
+* **NumPy**
+* **Matplotlib** 
+* **Kaggle API**
 
 
 ## 5. Results
